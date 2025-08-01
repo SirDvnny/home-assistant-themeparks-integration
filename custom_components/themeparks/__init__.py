@@ -93,7 +93,7 @@ class ThemeParkAPI:
 
             _LOGGER.debug("Parsed API item for: %s", item[NAME])
 
-            name = item[NAME] + " (" + self._parkname + ")"
+            name = item[NAME] #+ " (" + self._parkname + ")"                      # no longer necessary after the entities are divided into groups
 
             if "queue" not in item:
                 _LOGGER.debug("No queue in item")

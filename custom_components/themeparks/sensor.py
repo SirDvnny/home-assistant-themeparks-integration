@@ -57,6 +57,7 @@ class AttractionSensor(SensorEntity, CoordinatorEntity):
         self._attr_state_class = SensorStateClass.MEASUREMENT
         self._attr_native_value = self.coordinator.data[self.idx][TIME]
         self._attr_unique_id = f"{coordinator.entry_id}_{coordinator.data[idx][ID]}"
+        self._attr_device_info = {"identifiers": {(DOMAIN, self.coordinator.entry_id)},}
 
         _LOGGER.debug("Adding AttractionSensor called %s", self._attr_name)
 
